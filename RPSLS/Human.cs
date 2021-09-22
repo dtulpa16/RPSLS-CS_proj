@@ -8,14 +8,12 @@ namespace RPSLS
 {
     public class Human : Player
     {
-        public Human(string gestureChoice, int numberOfWins, string[] gestureChoices)
+        public Human(int numberOfWins)
         {
-            this.gestureChoice = gestureChoice;
             this.numberOfWins = numberOfWins;
-            this.gestureChoices = gestureChoices;
         }
 
-        public void GetChoice()
+        public string GetChoice()
         {
             Console.WriteLine("Choose rock, paper, scissors, lizard or spock: ");
             string userChoice = Console.ReadLine();
@@ -44,7 +42,7 @@ namespace RPSLS
                 Console.WriteLine("not a valid choice, please choose rock, paper, scissors, lizard or spock: ");
                 GetChoice();
             }
-            Console.WriteLine(userChoice);
+            return userChoice;
         }
 
     }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class AI
+    public class AI : Player
     {
+        public AI(string gestureChoice, int numberOfWins, string[] gestureChoices)
+        {
+            this.gestureChoice = gestureChoice;
+            this.numberOfWins = numberOfWins;
+            this.gestureChoices = gestureChoices;
+        }
         public string getChoice()
         {
             Random rnd = new Random();
@@ -33,7 +39,8 @@ namespace RPSLS
             {
                 aiChoice = "spock";
             }
-            Console.WriteLine(aiChoice);
+            return aiChoice;
+            Console.WriteLine("The bot has chosen {0}",aiChoice);
         }
     }
 }
